@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post">
+    <div class="border p-3">
+        <div class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-info pl-3">Zombie Type</h2>
+            <hr />
+        </div>
+
+        <div class="row">
+             @foreach (var item in this.ViewBag.MaListe)
+           {
+            <div class="col-8">
+                <div class="form-group row pb-3" >
+                    <div class="col-3">
+                        <label>Type Name :</label>
+                       
+                    </div>
+                    <div class="col-7">
+                       
+                           @item.TypeName
+                        
+                    </div>
+                </div>
+
+                <div class="form-group row py-2">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-100" value="Create" />
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-success w-100">Back to list</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4">
+            </div>
+            }
+        </div>
+        
+</form>
