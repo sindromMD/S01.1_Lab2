@@ -1,47 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<form method="post">
-    <div class="border p-3">
-        <div class="text-danger"></div>
-        <div class="form-group row">
-            <h2 class="text-info pl-3">Zombie Type</h2>
-            <hr />
+﻿@model ZombieParty.Models.ZombieType
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-8">
+            <h2 class="text-primary">Zombie Type</h2>
         </div>
+        <div class="col-4 text-right">
+            <a class="btn btn-success" asp-controller="ZombieType" asp-action="Create">
+                Create New Type
+            </a>
+        </div>
+    </div>
 
-        <div class="row">
-             @foreach (var item in this.ViewBag.MaListe)
-           {
-            <div class="col-8">
-                <div class="form-group row pb-3" >
-                    <div class="col-3">
-                        <label>Type Name :</label>
-                       
+    <br /><br />
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>
+                    Type Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in this.ViewBag.MaListe) {
+            <tr>
+                <td width="70%">@item.TypeName</td>
+                <td class="text-center">
+                    <div class="w-75 btn-group" role="group">
+                        <a class="btn btn-warning mx-2">
+                            Edit
+                        </a>
+                        <a class="btn btn-danger mx-2">
+                            Delete
+                        </a>
                     </div>
-                    <div class="col-7">
-                       
-                           @item.TypeName
-                        
-                    </div>
-                </div>
-
-                <div class="form-group row py-2">
-                    <div class="col-8 offset-2 row">
-                        <div class="col">
-                            <input type="submit" class="btn btn-info w-100" value="Create" />
-                        </div>
-                        <div class="col">
-                            <a class="btn btn-success w-100">Back to list</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-4">
-            </div>
+                </td>
+            </tr>
             }
-        </div>
-        
-</form>
+
+        </tbody>
+    </table>
+</div>

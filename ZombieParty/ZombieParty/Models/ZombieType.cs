@@ -1,4 +1,6 @@
-﻿namespace ZombieParty.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ZombieParty.Models
 {
     public class ZombieType
     {
